@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+   name: nodee
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+       app: nodee
+  template:
+    metadata:
+      labels:
+        app: nodee
+    spec:
+      containers:
+         - name: nodeee-container
+           image: nodeee:latest
+           imagePullPolicy: IfNotPresent
+           ports:
+             - containerPort: 3000
