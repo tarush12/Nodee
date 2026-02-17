@@ -20,12 +20,5 @@ stage ("push docker hub") {
      sh 'docker push tarush79/nodee:latest'
 }
 }
-
-stage ("deploy") {
-  steps {
-    sh 'kubectl apply -f deployment.yaml'
-    sh 'kubectl apply -f service.yaml'
-}
-}
 }
 }
