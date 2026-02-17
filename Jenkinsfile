@@ -2,13 +2,7 @@ pipeline {
    agent any
  
 stages {
-
-stage ("clone github") {
-   steps {
-    git "https://github.com/tarush12/Nodee.git"
-}
-}
-
+   
 stage ("build image") {
   steps {
     sh 'docker build -t tarush79/nodee:latest .'
