@@ -20,5 +20,12 @@ stage ("push docker hub") {
      sh 'docker push tarush79/nodee:latest'
 }
 }
+   stage('Deploy Container') {
+    steps {
+        sh 'docker rm -f nodeapp || true'
+        sh 'docker run -d -p 3000:3000 --name nodeapp tarush79/nodee:latest'
+    }
+}
+
 }
 }
